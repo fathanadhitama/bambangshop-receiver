@@ -65,16 +65,16 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement list_all_as_string function in Notification repository.`
     -   [x] Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
 -   **STAGE 3: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Commit: `Implement receive_notification function in Notification service.`
-    -   [ ] Commit: `Implement receive function in Notification controller.`
-    -   [ ] Commit: `Implement list_messages function in Notification service.`
-    -   [ ] Commit: `Implement list function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
+    -   [x] Commit: `Create Notification service struct skeleton.`
+    -   [x] Commit: `Implement subscribe function in Notification service.`
+    -   [x] Commit: `Implement subscribe function in Notification controller.`
+    -   [x] Commit: `Implement unsubscribe function in Notification service.`
+    -   [x] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [x] Commit: `Implement receive_notification function in Notification service.`
+    -   [x] Commit: `Implement receive function in Notification controller.`
+    -   [x] Commit: `Implement list_messages function in Notification service.`
+    -   [x] Commit: `Implement list function in Notification controller.`
+    -   [x] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -89,3 +89,12 @@ Answer: Dalam Rust, variabel statis memiliki sifat yang sama seperti variabel ko
 
 
 #### Reflection Subscriber-2
+1. Have you explored things outside of the steps in the tutorial, for example: src/lib.rs? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code.<br>
+Answer: Ya, saya coba mencari tahu fungsi dari file-file lain pada project yang tidak dijelaskan pada tutorial. Misalnya:
+    - `Cargo.toml` yang merupakan file konfigurasi utama untuk proyek Rust untuk mengelola dependensi, mengonfigurasi proyek, dan mendefinisikan metadata proyek.
+    - `Rocket.toml` yang merupakan file konfigurasi khusus untuk proyek yang menggunakan Rocket framework. Kita dapat mengatur konfigurasi spesifik Rocket, seperti port server, jumlah thread, level log, dan banyak lagi pada file ini. Pada tutorial ini, file Rocket.toml hanya digunakan untuk mengatur alamat IP yang didengarkan server dan port server.
+    - `lib.rs` pada projek ini berisi konfigurasi utama aplikasi seperti pembuatan variable global yang digunakan aplikasi, struktur dasar untuk konfigurasi aplikasi, method error handling pada aplikasi, dan penggunaan klien HTTP dalam aplikasi Rust menggunakan Rocket dan reqwest
+2. Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system?<br>
+Answer: Setelah menyelesaikan tutorial ini, saya dapat melihat bahwa Observer pattern dapat mempermudah dalam menambahkan lebih banyak subscriber karena adanya pemisahan antara Publisher dan Observer dengan manajemen **_message passing_** antara data owner dan subscribers. Apabila dispawn beberapa Main app, tiap instance tetap akan dapat berperan sebagai Publisher. Akan tetapi, menambah subscriber ke sistem tentu akan menambah kompleksitas kode dan membuat prosesnya tidak semudah penerapan 1 instance main app.
+3. Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project).<br>
+Answer: Saya telah mencoba untuk mengeksplor kedua fitur tersebut pada Postman. Akan tetapi saya baru menggunakan script testing yang saya dapat dari internet karena masih belum familiar dengan syntax pembuatan testingnya. Akan tetapi, saya dapat melihat bahwa fitur ini dapat sangat membantu untuk melakukan automated testing pada saat menguji respon server. Saya juga telah memanfaatkan fitur dokumentasi API pada Postman dengan menambahkan deskripsi yang jelas pada setiap request serta dapat melihat contoh body request yang diperlukan untuk memanggil request tersebut.
